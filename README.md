@@ -1,6 +1,6 @@
 # Enhancing-RUL-Prediction-for-Multi-Sensor-Equipment-with-a-Dual-attention-Transformer-Encoder
 
-This is the code of the paper "Enhancing Remaining Useful Life Prediction for Multi-Sensor Equipment with a Dualattention Transformer Encoder".
+This is the code of the paper "Enhancing Remaining Useful Life Prediction for Multi-Sensor Equipment with a Dual-attention Transformer Encoder".
 
 ## Instructions:
 * Step1 Run ./Transformer_pre.py to get the pre-training model proposed in this paper.The variable "sub_dataset" can be used to specify the dataset for Pre-training
