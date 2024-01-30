@@ -12,7 +12,7 @@ import time
 import math
 from torch.autograd import Variable
 from utils import *
-from BERT_pre_model import *
+from Transformer_pre_model import *
 
 from dataset.CMAPSS.CMAPSSDataset_pre import *
 
@@ -26,7 +26,7 @@ if __name__ == '__main__':
     torch.backends.cudnn.benchmark = False
 
 
-    sub_dataset = 'FD002'  # FD001, FD002
+    sub_dataset = 'FD001'  # FD001, FD002
     # Hyperparameters
     lr = 0.001
     batch_size = 256
@@ -83,7 +83,7 @@ if __name__ == '__main__':
 
 
     # Initialize model parameters
-    model = BERT_pre(input_size, num_hidden, seq_len, ffn_hidden, mlp_size, encoder_layers, n_heads, dropout)
+    model = Transformer_pre(input_size, num_hidden, seq_len, ffn_hidden, mlp_size, encoder_layers, n_heads, dropout)
     model = model.to(device)
     optimizer = torch.optim.Adam(model.parameters(), lr=lr)
     criterion = nn.MSELoss()

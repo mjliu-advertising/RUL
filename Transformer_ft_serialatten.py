@@ -9,7 +9,7 @@ import os
 import time
 from torch.autograd import Variable
 from utils import *
-from BERT_ft_serialatten_model import *
+from Transformer_ft_serialatten_model import *
 from torch.utils.data import TensorDataset, DataLoader
 from dataset.CMAPSS.CMAPSSDataset_ft import *
 
@@ -23,7 +23,7 @@ if __name__ == '__main__':
     torch.backends.cudnn.benchmark = False
 
     # Hyperparameters
-    sub_dataset = 'FD002'
+    sub_dataset = 'FD001'
     if sub_dataset in ['FD001', 'FD003']:
         lr = 0.001
         encoder_layers = 1
@@ -71,7 +71,7 @@ if __name__ == '__main__':
     test_loader = DataLoader(test_dataset, **kwargs)
     # valid_loader = DataLoader(valid_dataset, **kwargs)
     # Initialize model parameters
-    model = BERT_ft(input_size, num_hidden, seq_len, ffn_hidden, mlp_size, encoder_layers, n_heads, dropout)
+    model = Transformer_ft(input_size, num_hidden, seq_len, ffn_hidden, mlp_size, encoder_layers, n_heads, dropout)
     model = model.to(device)
     optimizer = torch.optim.Adam(model.parameters(), lr=lr)
     criterion = nn.MSELoss()
@@ -79,7 +79,6 @@ if __name__ == '__main__':
     # load model
     ###############
     PATH = './pre_{}.pt'.format(pre_model)
-    # PATH = 'FD002_600.pt'
     model.encoder.load_state_dict(torch.load(PATH), strict=False)
     ###############
     for param in model.encoder.parameters():
