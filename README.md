@@ -1,4 +1,4 @@
-# Enhancing-RUL-Prediction-for-Multi-Sensor-Equipment-with-a-Dual-attention-Transformer-Encoder
+# Enhancing-RUL-Prediction-for-Multi-Sensor-Equipment-with-a-Sequential-Feature-Attention-Mechanism
 
 This is the code of the paper "Enhancing Remaining Useful Life Prediction for Multi-Sensor Equipment with a Dual-attention Transformer Encoder".
 
